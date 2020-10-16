@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!--html5-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<!-- Mirrored from www.arduino.cc/en/Reference/HomePage by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 26 Oct 2015 13:58:47 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  	<meta charset="utf-8" />
+
+	<title>아두이노 - 참조 </title>
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+
+	<script src="../../../code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<link rel="stylesheet" href="../../fonts/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="../../css/arduino-icons.css">
+	<link rel="stylesheet" href="../../css/animation.css"><!--[if IE 7]>
+	<link rel="stylesheet" href="../../../www.arduino.cc/css/arduino-icons-ie7.css"><![endif]-->
+	<!--[if gte IE 9]><!-->
+	<link rel='stylesheet' href='../../css/foundation2.css' type='text/css' />
+	<!--<![endif]-->
+	<!--[if IE 8]>
+		<link rel='stylesheet' href='../../../www.arduino.cc/css/foundation_ie8.css' type='text/css' />
+	<![endif]-->
+	<link rel='stylesheet' href='../../css/arduino_code_highlight.css' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="screen" href="../../css/typeplate.css">
+	<link rel='stylesheet' href='../pub/skins/arduinoWide_SSO/css/arduinoWide_SSO.css' type='text/css' />
+
+	<link rel='stylesheet' href='../../css/common.css' type='text/css' />
+	<link rel="stylesheet" href="../../css/download_page.css" />
+	<link href="https://plus.google.com/114839908922424087554" rel="publisher" />
+
+	<!-- embedded JS and CSS from PmWiki plugins -->	
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 5px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+div.toc p { background-color: #f9f6d6;
+    margin-top:-5px;   padding-top: 5px;
+    margin-left:-5px;  padding-left: 5px;
+    margin-right:-5px; padding-right: 5px;
+    padding-bottom: 3px;
+    border-bottom:  1px dotted #cccccc; }.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border: 2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  td.markup1 { border-bottom: 1px solid #ccf; }
+  div.faq { margin-left:2em; }
+  div.faq p.question { margin: 1em 0 0.75em -2em; font-weight:bold; }
+  div.faq hr { margin-left: -2em; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script><script src="../../../www.arduino.cc/en/pub/galleria/galleria-1.2.6.min.js"></script><script type="text/javascript">Galleria.loadTheme("../../../www.arduino.cc/en/pub/galleria/themes/classic/galleria.classic.min.js");</script>  <meta name='robots' content='index,follow' />
+
+
+	<script src="../../../www.arduino.cc/js/vendor/custom.modernizr.js"></script>
+
+	<!-- do not remove none of those lines, comments embedding in pages will break! -->
+	<script src="../../../code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+    <!--
+	<script src="http://arduino.cc/en/pub/js/newsletter_subscribe_popup.js" type="text/javascript"></script>
+	<script src="https://checkout.stripe.com/checkout.js" type="text/javascript"></script>
+	<script src="https://www.arduino.cc/en/pub/js/software_download.js" type="text/javascript"></script>
+	-->
+    <!-- keep https! -->
+	<link rel='stylesheet' href='../../../code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css' type='text/css' />
+</head>
+<body>
+
+	<div id="menuWings" class="fixed"></div>
+	<div id="page">
+		
+		
+<script>
+	var userAgent = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
+	if(userAgent.indexOf('mac')>0){
+		$("head").append('<style type="text/css">@-moz-document url-prefix() {h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, th a, th a:hover, h3 a:hover, h4 a:hover, h5 a:hover, #wikitext h2 a:hover, #wikitext h3 a:hover, #wikitext h4 a:hover {padding-bottom: 0.5em!important;} #pageheader .search input{font-family: "TyponineSans Regular 18";} #pagefooter .monospace{margin-top: -4px;} #navWrapper ul.left &gt; li{margin-top: -2px; padding-bottom: 2px;}#navWrapper ul.right &gt; li{margin-top: -5px; padding-bottom: 5px;}#navWrapper ul.right &gt; li ul{margin-top: 4px;} .slider-container .fixed-caption p{padding:8px 0 14px 0}}</style>');
+	}
+</script>
+
+<!--[if IE]>
+<link rel='stylesheet' href='https://id.arduino.cc//css/ie-monospace.css' type='text/css' />
+<![endif]-->
+
+<!--[if IE 8]>
+<div class="alert-box panel ie8alert">
+  <p><strong>Arduino.cc는 인터넷 익스프로러 8에 제한된 호환성을 제공하고 있습니다. 크롬, 파이어 폭스 혹은 사파리 등과 같은 모던 브라우저를 사용하세요.</strong></p>
+  <a href="" class="close">&times;</a>
+</div>
+<![endif]-->
+
+<div id="pageheader">
+	<div class="row" class="contain-to-grid">
+		<div class="small-6 large-8 eight columns">
+			<div class="title"><a href="http://www.arduino.cc/">아두이노</a></div>
+		</div>
+		<div class="small-6 large-4 four columns search">
+			<div class="row collapse">
+				<form method="GET" action="http://www.google.com/search">
+	<div class="small-12 twelve columns">
+		<i class="icon-search-2"></i>
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="hidden" name="oe" value="UTF-8">
+		<input type="text" name="q" size="25" maxlength="255" value="" placeholder="아두이노 웹 사이트에서 찾기">
+		<input type="submit" name="btnG" VALUE="search">
+		<input type="hidden" name="domains" value="http://www.arduino.cc">
+		<input type="hidden" name="sitesearch" value="http://www.arduino.cc">
+	</div>
+</form>			</div>
+		</div>
+	</div>
+
+	<!--[if gte IE 9]><!-->
+	<div id="navWrapper"  class="sticky">
+	<!--<![endif]-->
+	<!--[if IE 8]>
+		<div id="navWrapper">
+	<![endif]-->
+		<nav class="top-bar"  data-options="is_hover:true" >
+			<ul class="title-area">
+				<li class="name"></li>
+			</ul>
+
+			<section class="top-bar-section">
+				<ul class="left">
+					<li id="navLogo">
+						<a href="http://www.arduino.cc/">
+							<img src="../../img/logo_46.png" alt="userpicture" />
+						</a>
+					</li>
+					<li id="navHome"><a href="http://www.arduino.cc/">홈</a></li>
+					<li><a href="http://store.arduino.cc/">구입</a></li>
+					<li><a href="http://www.arduino.cc/en/Main/Software">다운로드</a></li>
+					<li class="has-dropdown"><a href="#">제품</a>
+						<ul class="dropdown">
+							<li><a href="http://www.arduino.cc/en/Main/Products">아두이노 <span class="menudescription">(미국만 해당)</span></a></li>
+							<li><a href="http://www.arduino.cc/en/Main/GenuinoProducts">제누이노 <span class="menudescription">(미국 외)</span></a></li>
+							<li><a href="http://www.arduino.cc/en/ArduinoAtHeart/Products">AtHeart</a></li>
+							<li><a href="http://www.arduino.cc/en/ArduinoCertified/Products">인증 제품</a></li>
+						</ul>
+					</li>
+					<li class="has-dropdown active"><a href="#">배우기</a>
+						<ul class="dropdown">
+							<li><a href="http://www.arduino.cc/en/Guide/HomePage">시작 하기</a></li>
+							<li><a href="http://www.arduino.cc/en/Tutorial/HomePage">자습서</a></li>
+							<li><a href="HomePage.html">참조</a></li>
+							<li><a href="http://www.arduino.cc/en/Main/CTCprogram">CTC 프로그램</a></li>
+							<li><a href="http://playground.arduino.cc/">놀이터</a></li>
+						</ul>
+					</li>
+					<li><a href="http://forum.arduino.cc/">포럼</a></li>
+					<li class="has-dropdown"><a href="#">지원</a>
+						<ul class="dropdown">
+							<li><a href="http://www.arduino.cc/en/Main/FAQ">자주 묻는 질문들</a></li>
+							<li><a href="http://www.arduino.cc/en/ContactUs">연락처</a></li>
+						</ul>
+					</li>
+					<li><a href="http://blog.arduino.cc/">블로그</a></li>
+				</ul>
+
+								<ul class="right">
+					<li><a href="https://id.arduino.cc/auth/login/?returnurl=http%3A%2F%2Fwww.arduino.cc%2Fen%2FReference%2FSemiColon" class="cart">로그인</a></li>
+					<li><a href="https://id.arduino.cc/auth/signup" class="cart">가입하기</a></li>
+				</ul>
+							</section>
+		</nav>
+	</div>
+</div>
+
+
+
+		<br class="clear"/>
+
+		<div id="pagetext">
+				<!--PageText-->
+<div id='wikitext'>
+<p><strong>참조</strong> &nbsp;  <a class='selflink' href='HomePage.html'>언어</a> | <a class='wikilink' href='Libraries.html'>라이브러리</a> | <a class='wikilink' href='Comparison.html'>비교</a> | <a class='wikilink' href='Changes.html'>변경 사항들</a>
+</p>
+<p class='vspace'></p><h2>언어</h2>
+<p class='subheader'>아두이노 스케치 프로그램은 세 주요 부분으로 나눌 수 있습니다: <em>구조</em>, <em>변수</em> (변수와 상수), 그리고 <em>함수</em>.
+</p>
+<p class='vspace'></p>
+<table  width='100%' border='0' cellpadding='5' cellspacing='0' class="borderColumn"><tr><td  width='33%' class="title-green" valign='top'>
+<h3>구조</h3>
+<ul><li><a class='wikilink' href='Setup.html'>setup</a>()
+</li><li><a class='wikilink' href='Loop.html'>loop</a>()
+</li></ul><p class='vspace'></p><h4>제어 구조</h4>
+<ul><li><a class='wikilink' href='If.html'>if</a>
+</li><li><a class='wikilink' href='Else.html'>if...else</a>
+</li><li><a class='wikilink' href='For.html'>for</a>
+</li><li><a class='wikilink' href='SwitchCase.html'>switch case</a>
+</li><li><a class='wikilink' href='While.html'>while</a>
+</li><li><a class='wikilink' href='DoWhile.html'>do... while</a>
+</li><li><a class='wikilink' href='Break.html'>break</a>
+</li><li><a class='wikilink' href='Continue.html'>continue</a>
+</li><li><a class='wikilink' href='Return.html'>return</a>
+</li><li><a class='wikilink' href='Goto.html'>goto</a>
+</li></ul><p class='vspace'></p><h4>추가 구문</h4>
+<ul><li><a class='wikilink' href='SemiColon.html'>;</a> (세미콜론)
+</li><li><a class='wikilink' href='Braces.html'>{}</a> (중괄호)
+</li><li><a class='wikilink' href='Comments.html'>//</a> (한줄 주석)
+</li><li><a class='wikilink' href='Comments.html'>/* */</a> (여러 줄 주석)
+</li><li><a class='wikilink' href='Define.html'>#define</a>
+</li><li><a class='wikilink' href='Include.html'>#include</a>
+</li></ul><p class='vspace'></p><h4>산술 연산자</h4>
+<ul><li><a class='wikilink' href='Assignment.html'>=</a> (대입 연산자)
+</li><li><a class='wikilink' href='Arithmetic.html'>+&nbsp;</a> (더하기)
+</li><li><a class='wikilink' href='Arithmetic.html'>-</a> (빼기)
+</li><li><a class='wikilink' href='Arithmetic.html'>*</a> (곱하기)
+</li><li><a class='wikilink' href='Arithmetic.html'>/</a> (나누기)
+</li><li><a class='wikilink' href='Modulo.html'>%</a> (나머지)
+</li></ul><p class='vspace'></p><h4>비교 연산자</h4>
+<ul><li><a class='wikilink' href='If.html'>==</a> (같음)
+</li><li><a class='wikilink' href='If.html'>!=</a> (같지 않음)
+</li><li><a class='wikilink' href='If.html'>&lt;</a> (작음)
+</li><li><a class='wikilink' href='If.html'>&gt;</a> (큼)
+</li><li><a class='wikilink' href='If.html'>&lt;=</a> (작거나 같음)
+</li><li><a class='wikilink' href='If.html'>&gt;=</a> (크거나 같음)
+</li></ul><p class='vspace'></p><h4>논리 연산자</h4>
+<ul><li><a class='wikilink' href='Boolean.html'>&amp;&amp;</a> (AND)
+</li><li><a class='wikilink' href='Boolean.html'>||</a> (OR)
+</li><li><a class='wikilink' href='Boolean.html'>!</a> (NOT)
+</li></ul><p class='vspace'></p><h4>포인터 연산자</h4>
+<ul><li><a class='wikilink' href='Pointer.html'>* 포인터</a>
+</li><li><a class='wikilink' href='Pointer.html'>&amp; 참조 연산자</a>
+</li></ul><p class='vspace'></p><h4>비트 연산자</h4>
+<ul><li><a class='wikilink' href='BitwiseAnd.html'>&amp;</a> (비트 AND)
+</li><li><a class='wikilink' href='BitwiseAnd.html'>|</a> (비트 OR)
+</li><li><a class='wikilink' href='BitwiseAnd.html'>^</a> (비트 XOR)
+</li><li><a class='wikilink' href='BitwiseXorNot.html'>~</a> (비트 NOT)
+</li><li><a class='wikilink' href='Bitshift.html'>&lt;&lt;</a> (비트 왼쪽으로 이동)
+</li><li><a class='wikilink' href='Bitshift.html'>&gt;&gt;</a> (비트 오른쪽으로 이동)
+</li></ul><p class='vspace'></p><h4>복합 연산자</h4>
+<ul><li><a class='wikilink' href='Increment.html'>++</a> (증가, 단항 연산자라고 함)
+</li><li><a class='wikilink' href='Increment.html'>--</a> (감소, 단항 연산자라고 함)
+</li><li><a class='wikilink' href='IncrementCompound.html'>+=</a> (덧셈 할당)
+</li><li><a class='wikilink' href='IncrementCompound.html'>-=</a> (뺄셈 할당)
+</li><li><a class='wikilink' href='IncrementCompound.html'>*=</a> (곱셈 할당)
+</li><li><a class='wikilink' href='IncrementCompound.html'>/=</a> (나눗셈 할당)
+</li><li><a class='wikilink' href='IncrementCompound.html'>%=</a> (나머지 할당)
+<p class='vspace'></p></li><li><a class='wikilink' href='BitwiseCompoundAnd.html'>&amp;=</a> (비트 AND 할당)
+</li><li><a class='wikilink' href='BitwiseCompoundOr.html'>|=</a> (비트 OR 할당)
+</li></ul><p class='vspace'></p></td><td  width='33%' class="title-blue" valign='top'>
+    <h3><a class='urllink' href='VariableDeclaration.html' rel='nofollow'>변수</a></h3>
+<h4>상수</h4>
+<ul><li><a class='wikilink' href='Constants.html'>HIGH</a> | <a class='wikilink' href='Constants.html'>LOW</a>
+</li><li><a class='wikilink' href='Constants.html'>INPUT</a> | <a class='wikilink' href='Constants.html'>OUTPUT</a> | <a class='wikilink' href='Constants.html'>INPUT_PULLUP</a>
+</li><li><a class='wikilink' href='Constants.html'>LED_BUILTIN</a>
+</li><li><a class='wikilink' href='Constants.html'>true(참)</a> | <a class='wikilink' href='Constants.html'>false(거짓)</a>
+</li><li><a class='wikilink' href='IntegerConstants.html'>정수</a>
+</li><li><a class='wikilink' href='Fpconstants.html'>부동소수</a>
+</li></ul><p class='vspace'></p><h4>데이터 유형</h4>
+<ul><li><a class='wikilink' href='Void.html'>void</a>
+</li><li><a class='wikilink' href='BooleanVariables.html'>boolean</a>
+</li><li><a class='wikilink' href='Char.html'>char</a>
+</li><li><a class='wikilink' href='UnsignedChar.html'>unsigned char</a>
+</li><li><a class='wikilink' href='Byte.html'>byte</a>
+</li><li><a class='wikilink' href='Int.html'>int</a>
+</li><li><a class='wikilink' href='UnsignedInt.html'>unsigned int</a>
+</li><li><a class='wikilink' href='Word.html'>word</a>
+</li><li><a class='wikilink' href='Long.html'>long</a>
+</li><li><a class='wikilink' href='UnsignedLong.html'>unsigned long</a>
+</li><li><a class='wikilink' href='Short.html'>short</a>
+</li><li><a class='wikilink' href='Float.html'>float</a>
+</li><li><a class='wikilink' href='Double.html'>double</a>
+</li><li><a class='wikilink' href='String.html'>문자열</a>
+</li><li><a class='wikilink' href='StringObject.html'>String</a> - 객체
+</li><li><a class='wikilink' href='Array.html'>배열</a>
+</li></ul><p class='vspace'></p><h4>유형 변환</h4>
+<ul><li><a class='wikilink' href='CharCast.html'>char()</a>
+</li><li><a class='wikilink' href='ByteCast.html'>byte()</a>
+</li><li><a class='wikilink' href='IntCast.html'>int()</a>
+</li><li><a class='wikilink' href='WordCast.html'>word()</a>
+</li><li><a class='wikilink' href='LongCast.html'>long()</a>
+</li><li><a class='wikilink' href='FloatCast.html'>float()</a>
+</li></ul><p class='vspace'></p><h4>유효 범위와 한정자</h4>
+<ul><li><a class='wikilink' href='Scope.html'>변수 유효 범위</a>
+</li><li><a class='wikilink' href='Static.html'>static</a>
+</li><li><a class='wikilink' href='Volatile.html'>volatile</a>
+</li><li><a class='wikilink' href='Const.html'>const</a>
+</li></ul><p class='vspace'></p><h4>유틸리티</h4>
+<ul><li><a class='wikilink' href='Sizeof.html'>sizeof</a>()
+</li><li><a class='wikilink' href='PROGMEM.html'>PROGMEM</a>
+</li></ul><p class='vspace'></p></td><td  width='33%' class="title-orange" valign='top'> 
+<h3><a class='urllink' href='FunctionDeclaration.html' rel='nofollow'>함수</a></h3>
+<h4>디지털 입출력</h4>
+<ul><li><a class='wikilink' href='PinMode.html'>pinMode</a>()   
+</li><li><a class='wikilink' href='DigitalWrite.html'>digitalWrite</a>() 
+</li><li><a class='wikilink' href='DigitalRead.html'>digitalRead</a>()
+</li></ul><p class='vspace'></p><h4>아날로그 입출력</h4>
+<ul><li><a class='wikilink' href='AnalogReference.html'>analogReference</a>()
+</li><li><a class='wikilink' href='AnalogRead.html'>analogRead</a>() 
+</li><li><a class='wikilink' href='AnalogWrite.html'>analogWrite</a>() - <em>PWM</em>
+</li></ul><p class='vspace'></p><h4>두에 &amp; 제로 전용</h4>
+<ul><li><a class='wikilink' href='AnalogReadResolution.html'>analogReadResolution</a>()
+</li><li><a class='wikilink' href='AnalogWriteResolution.html'>analogWriteResolution</a>()
+</li></ul><p class='vspace'></p><h4>고급 입출력</h4>
+<ul><li><a class='wikilink' href='Tone.html'>tone</a>()
+</li><li><a class='wikilink' href='NoTone.html'>noTone</a>()
+</li><li><a class='wikilink' href='ShiftOut.html'>shiftOut</a>() 
+</li><li><a class='wikilink' href='ShiftIn.html'>shiftIn</a>() 
+</li><li><a class='wikilink' href='PulseIn.html'>pulseIn</a>()
+</li></ul><p class='vspace'></p><h4>시간</h4>
+<ul><li><a class='wikilink' href='Millis.html'>millis</a>()   
+</li><li><a class='wikilink' href='Micros.html'>micros</a>()   
+</li><li><a class='wikilink' href='Delay.html'>delay</a>()  
+</li><li><a class='wikilink' href='DelayMicroseconds.html'>delayMicroseconds</a>()
+</li></ul><p class='vspace'></p><h4>수학</h4>
+<ul><li><a class='wikilink' href='Min.html'>min</a>()
+</li><li><a class='wikilink' href='Max.html'>max</a>()
+</li><li><a class='wikilink' href='Abs.html'>abs</a>()
+</li><li><a class='wikilink' href='Constrain.html'>constrain</a>()
+</li><li><a class='wikilink' href='Map.html'>map</a>()
+</li><li><a class='wikilink' href='Pow.html'>pow</a>()
+</li><li><a class='wikilink' href='Sqrt.html'>sqrt</a>()
+</li></ul><p class='vspace'></p><h4>삼각함수</h4>
+<ul><li><a class='wikilink' href='Sin.html'>sin</a>()
+</li><li><a class='wikilink' href='Cos.html'>cos</a>()
+</li><li><a class='wikilink' href='Tan.html'>tan</a>()
+</li></ul><p class='vspace'></p><h4>문자 함수들</h4>
+<ul><li><a class='wikilink' href='CharacterAnalysis.html'>isAlphaNumeric</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isAlpha</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isAscii</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isWhitespace</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isControl</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isDigit</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isGraph</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isLowerCase</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isPrintable</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isPunct</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isSpace</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isUpperCase</a>()
+</li><li><a class='wikilink' href='CharacterAnalysis.html'>isHexadecimalDigit</a>()
+</li></ul><p class='vspace'></p><h4>난수</h4>
+<ul><li><a class='wikilink' href='RandomSeed.html'>randomSeed</a>()
+</li><li><a class='wikilink' href='Random.html'>random</a>()
+</li></ul><p class='vspace'></p><h4>비트와 바이트</h4>
+<ul><li><a class='wikilink' href='LowByte.html'>lowByte</a>()
+</li><li><a class='wikilink' href='HighByte.html'>highByte</a>()
+</li><li><a class='wikilink' href='BitRead.html'>bitRead</a>()
+</li><li><a class='wikilink' href='BitWrite.html'>bitWrite</a>()
+</li><li><a class='wikilink' href='BitSet.html'>bitSet</a>()
+</li><li><a class='wikilink' href='BitClear.html'>bitClear</a>()
+</li><li><a class='wikilink' href='Bit.html'>bit</a>()
+</li></ul><p class='vspace'></p><h4>외부 인터럽트</h4>
+<ul><li><a class='wikilink' href='AttachInterrupt.html'>attachInterrupt</a>()
+</li><li><a class='wikilink' href='DetachInterrupt.html'>detachInterrupt</a>()
+</li></ul><p class='vspace'></p><h4>인터럽트</h4>
+<ul><li><a class='wikilink' href='Interrupts.html'>interrupts</a>()
+</li><li><a class='wikilink' href='NoInterrupts.html'>noInterrupts</a>()
+</li></ul><p class='vspace'></p><h4>통신</h4>
+<ul><li><a class='wikilink' href='Serial.html'>Serial</a>
+</li><li><a class='wikilink' href='Stream.html'>Stream</a>
+</li></ul><p class='vspace'></p><h4>USB (32u4 기반 보드와 두에/제로 전용)</h4>
+<ul><li><a class='wikilink' href='MouseKeyboard.html'>Keyboard</a>
+</li><li><a class='wikilink' href='MouseKeyboard.html'>Mouse</a>
+</li></ul><p class='vspace'></p><h4>다른 것을 찾으시나요?  </h4>
+<p>특정 하드웨어 유형과 연동은 <a class='wikilink' href='Libraries.html'>라이브러리</a>를 참고하세요. <a class='urllink' href='http://www.arduino.cc/playground/Main/GeneralCodeLibrary' rel='nofollow'>커뮤니티 기여 코드</a> 목록들도 한번 시도하여 보세요.  아두이노 언어는 C/C++을 기반으로 합니다.  <a class='urllink' href='http://www.nongnu.org/avr-libc/user-manual/modules.html' rel='nofollow'>AVR Libc</a> 링크이며 기능들 중 어느 것이든 사용할 수 있습니다; 자세한 사항은 <a class='urllink' href='http://www.nongnu.org/avr-libc/user-manual/index.html' rel='nofollow'>사용자 설명서</a>를 참조하세요.
+</p>
+<p class='vspace'></p></td></tr></table>
+<p><a class='selflink' href='HomePage.html'>참조 홈 페이지</a>
+</p>
+<p class='vspace'></p><p><em>수정, 제안, 새로운 문서는 <a class='urllink' href='http://arduino.cc/forum/index.php/board,23.0.html' rel='nofollow'>포럼</a>에 올려 주세요.</em>
+</p>
+<p class='vspace'></p><p>아두이노 참조의 텍스트는
+<a class='urllink' href='http://creativecommons.org/licenses/by-sa/3.0/' rel='nofollow'>크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0 라이센스</a>하에 허가된 것입니다.  참고의 코드 샘플은 공개 도메인으로 배포되었습니다.
+</p>
+</div>
+		</div> <!-- eof pagetext -->
+
+	</div> <!-- eof page -->
+
+	<!--PageFooterFmt-->
+<div id="pagefooter" class="pagefooter">
+  <div class="row">
+    <div class="large-8 eight columns">
+      <div class="large-4 four columns newsletter-box">
+        <!-- Begin Sendy Signup Form -->
+        <h6>뉴스레터</h6>
+        <div>
+          <input type="email" name="email" class="email" id="sendy-EMAIL" placeholder="가입을 위한 Email 주소를 넣어 주세요">
+          <i class="icon-right-small"></i>
+          <input value="Subscribe" name="subscribe" id="sendy-subscribe" class="newsletter-button">
+        </div>
+        <!--End sendy_embed_signup-->
+      </div>
+      <div class="clearfix"></div>
+      <ul class="inline-list">
+        <li class="monospace">&copy;2015 아두이노</li>
+        <li><a href="http://www.arduino.cc/en/Main/CopyrightNotice">저작권 안내</a></li>
+        <li><a href='http://www.arduino.cc/en/Main/ContactUs'>문의</a></li>
+        <li><a href='http://www.arduino.cc/en/Main/AboutUs'>회사 소개</a></li>
+        <li><a href='http://www.arduino.cc/Careers'>채용 정보</a></li>
+      </ul>
+    </div>
+    <div class="large-4 four columns">
+      <ul id="arduinoSocialLinks" class="arduino-social-links">
+        <li>
+          <a href="https://twitter.com/arduino">
+            <img src="../../img/twitter.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/official.arduino">
+            <img src="../../img/facebook.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/+Arduino">
+            <img src="../../img/gplus.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.flickr.com/photos/arduino_cc">
+            <img src="../../img/flickr.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/arduinoteam">
+            <img src="../../img/youtube.png" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+	</div>
+	<!--/PageFooterFmt-->
+	
+	<!--[if gte IE 9]><!-->
+	<script src="../../../www.arduino.cc/js/foundation.min.js"></script>
+	<script src="../../../www.arduino.cc/js/foundation.topbar.custom.js"></script>
+	<script>
+	  $(document).foundation();
+	</script>
+	<!--<![endif]-->
+	<!--[if IE 8]>
+	<script src="../../../www.arduino.cc/js/foundation_ie8.min.js"></script>
+	<script src="../../../www.arduino.cc/js/ie8/jquery.foundation.orbit.js"></script>
+	<script src="../../../www.arduino.cc/js/ie8/jquery.foundation.alerts.js"></script>
+	<script src="../../../www.arduino.cc/js/app.js"></script>
+	
+	<script>
+	$(window).load(function(){
+	  $("#featured").orbit();
+	});
+	</script>
+	<![endif]-->
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-22581631-3']);
+	  _gaq.push(['_setDomainName', 'arduino.cc']);
+	  _gaq.push(['_trackPageview']);
+	
+	    (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+</body>
+
+<!-- Mirrored from www.arduino.cc/en/Reference/HomePage by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 26 Oct 2015 14:00:21 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>

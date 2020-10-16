@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<!--html5-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<!-- Mirrored from www.arduino.cc/en/Reference/TFTLibrary by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 26 Oct 2015 14:03:44 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  	<meta charset="utf-8" />
+
+	<title>아두이노 - TFTLibrary </title>
+	<link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+
+	<script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+
+	<link rel="stylesheet" href="../../fonts/fonts.css" type="text/css" />
+	<link rel="stylesheet" href="../../css/arduino-icons.css">
+	<link rel="stylesheet" href="../../css/animation.css"><!--[if IE 7]>
+	<link rel="stylesheet" href="//arduino.cc/css/arduino-icons-ie7.css"><![endif]-->
+	<!--[if gte IE 9]><!-->
+	<link rel='stylesheet' href='../../css/foundation2.css' type='text/css' />
+	<!--<![endif]-->
+	<!--[if IE 8]>
+		<link rel='stylesheet' href='//arduino.cc/css/foundation_ie8.css' type='text/css' />
+	<![endif]-->
+	<link rel='stylesheet' href='../../css/arduino_code_highlight.css' type='text/css' />
+	<link rel="stylesheet" type="text/css" media="screen" href="../../css/typeplate.css">
+	<link rel='stylesheet' href='../pub/skins/arduinoWide_SSO/css/arduinoWide_SSO.css' type='text/css' />
+
+	<link rel='stylesheet' href='../../css/common.css' type='text/css' />
+	<link rel="stylesheet" href="../../css/download_page.css" />
+	<link href="https://plus.google.com/114839908922424087554" rel="publisher" />
+
+	<!-- embedded JS and CSS from PmWiki plugins -->	
+	<!--HeaderText--><style type='text/css'><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  
+span.anchor {
+	float: left;
+	font-size: 10px;
+	margin-left: -10px;
+	width: 10px;
+    position:relative; top:-0.1em;
+	text-align: center;
+}
+span.anchor a { text-decoration: none; }
+span.anchor a:hover { text-decoration: underline; }
+ol.toc { text-indent:-20px; list-style: none; }
+ol.toc ol.toc { text-indent:-40px; }
+div.tocfloat { font-size: smaller; margin-bottom: 10px;
+    border-top: 1px dotted #555555; border-bottom: 1px dotted #555555;
+    padding-top: 5px; padding-bottom: 5px; 
+    width: 38%; float: right; margin-left: 10px; clear: right;
+    margin-right:-13px; padding-right: 13px; padding-left: 13px;
+    background-color: #eeeeee; }
+div.toc { font-size: smaller; 
+    padding: 5px; border: 1px dotted #cccccc;
+    background: #f7f7f7;
+    margin-bottom: 10px; }
+div.toc p { background-color: #f9f6d6;
+    margin-top:-5px;   padding-top: 5px;
+    margin-left:-5px;  padding-left: 5px;
+    margin-right:-5px; padding-right: 5px;
+    padding-bottom: 3px;
+    border-bottom:  1px dotted #cccccc; }.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border: 2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  td.markup1 { border-bottom: 1px solid #ccf; }
+  div.faq { margin-left:2em; }
+  div.faq p.question { margin: 1em 0 0.75em -2em; font-weight:bold; }
+  div.faq hr { margin-left: -2em; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+/**
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ */
+.arduino  {font-family:monospace;}
+.arduino .imp {font-weight: bold; color: red;}
+.arduino .kw1 {color: #CC6600;}
+.arduino .kw2 {color: #006699;}
+.arduino .kw3 {color: #CC6600; font-weight: bold;}
+.arduino .co1 {color: #7E7E7E; font-style: italic;}
+.arduino .co2 {color: #7E7E7E;}
+.arduino .coMULTI {color: #7E7E7E; font-style: italic;}
+.arduino .es0 {color: #000099; font-weight: bold;}
+.arduino .es1 {color: #000099; font-weight: bold;}
+.arduino .es2 {color: #660099; font-weight: bold;}
+.arduino .es3 {color: #660099; font-weight: bold;}
+.arduino .es4 {color: #660099; font-weight: bold;}
+.arduino .es5 {color: #006699; font-weight: bold;}
+.arduino .br0 {color: #000000;}
+.arduino .sy0 {color: #000000;}
+.arduino .st0 {color: #0066CC;}
+.arduino .nu0 {color: #000000;}
+.arduino .nu6 {color: #208080;}
+.arduino .nu8 {color: #208080;}
+.arduino .nu12 {color: #208080;}
+.arduino .nu16 {color:#800080;}
+.arduino .nu17 {color:#800080;}
+.arduino .nu18 {color:#800080;}
+.arduino .nu19 {color:#800080;}
+.arduino .me1 {color: #ff1493;}
+.arduino .me2 {color: #ff1493;}
+.arduino span.xtra { display:block; }
+
+.sourceblocklink {
+  text-align: right;
+  font-size: smaller;
+}
+.sourceblocktext {
+  padding: 0.5em;
+  color: #000000;
+  background-color: #ECF1F1;
+}
+.sourceblock .sourceblocktext .arduino {
+  font-family: 'TyponineSans Monospace Regular 4';
+  font-size: 14px;
+  line-height: 18px;
+}
+code {
+  background-color: #ECF1F1;
+  font-size: 15px;
+  line-height: 19px;
+  padding: 2px 10px 5px 10px;
+}
+.sourceblocktext div {
+  font-family: monospace;
+  font-size: small;
+  line-height: 1;
+  height: 1%;
+}
+.sourceblocktext div.head,
+.sourceblocktext div.foot {
+  font: italic medium serif;
+  padding: 0.5em;
+}
+
+--></style><script type="text/javascript">
+function toggle(obj) {
+    var elstyle = document.getElementById(obj).style;
+    var text    = document.getElementById(obj + "tog");
+    if (elstyle.display == 'none') {
+        elstyle.display = 'block';
+        text.innerHTML = "hide";
+    } else {
+        elstyle.display = 'none';
+        text.innerHTML = "show";
+    }
+}
+</script><script src="http://www.arduino.cc/en/pub/galleria/galleria-1.2.6.min.js"></script><script type="text/javascript">Galleria.loadTheme("http://www.arduino.cc/en/pub/galleria/themes/classic/galleria.classic.min.js");</script>  <meta name='robots' content='index,follow' />
+
+
+	<script src="http://arduino.cc/js/vendor/custom.modernizr.js"></script>
+
+	<!-- do not remove none of those lines, comments embedding in pages will break! -->
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="http://arduino.cc/en/pub/js/newsletter_subscribe_popup.js" type="text/javascript"></script>
+	<script src="https://checkout.stripe.com/checkout.js" type="text/javascript"></script>
+	<script src="https://www.arduino.cc/en/pub/js/software_download.js" type="text/javascript"></script><!-- keep https! -->
+	<link rel='stylesheet' href='../../../code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.min.css' type='text/css' />
+</head>
+<body>
+
+	<div id="menuWings" class="fixed"></div>
+	<div id="page">
+		
+		
+<script>
+	var userAgent = (navigator.userAgent || navigator.vendor || window.opera).toLowerCase();
+	if(userAgent.indexOf('mac')>0){
+		$("head").append('<style type="text/css">@-moz-document url-prefix() {h1 a, h2 a, h3 a, h4 a, h5 a, h1 a:hover, h2 a:hover, th a, th a:hover, h3 a:hover, h4 a:hover, h5 a:hover, #wikitext h2 a:hover, #wikitext h3 a:hover, #wikitext h4 a:hover {padding-bottom: 0.5em!important;} #pageheader .search input{font-family: "TyponineSans Regular 18";} #pagefooter .monospace{margin-top: -4px;} #navWrapper ul.left &gt; li{margin-top: -2px; padding-bottom: 2px;}#navWrapper ul.right &gt; li{margin-top: -5px; padding-bottom: 5px;}#navWrapper ul.right &gt; li ul{margin-top: 4px;} .slider-container .fixed-caption p{padding:8px 0 14px 0}}</style>');
+	}
+</script>
+
+<!--[if IE]>
+<link rel='stylesheet' href='https://id.arduino.cc//css/ie-monospace.css' type='text/css' />
+<![endif]-->
+
+<div id="menuWings" class="fixed"></div>
+
+<!--[if IE 8]>
+<div class="alert-box panel ie8alert">
+  <p><strong>Arduino.cc는 인터넷 익스프로러 8에 제한된 호환성을 제공하고 있습니다. 크롬, 파이어 폭스 혹은 사파리 등과 같은 모던 브라우저를 사용하세요.</strong></p>
+  <a href="" class="close">&times;</a>
+</div>
+<![endif]-->
+
+<div id="pageheader">
+	<div class="row" class="contain-to-grid">
+		<div class="small-6 large-8 eight columns">
+			<div class="title"><a href="http://www.arduino.cc/">아두이노</a></div>
+		</div>
+		<div class="small-6 large-4 four columns search">
+			<div class="row collapse">
+				<form method="GET" action="http://www.google.com/search">
+	<div class="small-12 twelve columns">
+		<i class="icon-search-2"></i>
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="hidden" name="oe" value="UTF-8">
+		<input type="text" name="q" size="25" maxlength="255" value="" placeholder="아두이노 웹 사이트에서 찾기">
+		<input type="submit" name="btnG" VALUE="search">
+		<input type="hidden" name="domains" value="http://www.arduino.cc">
+		<input type="hidden" name="sitesearch" value="http://www.arduino.cc">
+	</div>
+</form>			</div>
+		</div>
+	</div>
+
+	<!--[if gte IE 9]><!-->
+	<div id="navWrapper"  class="sticky">
+	<!--<![endif]-->
+	<!--[if IE 8]>
+		<div id="navWrapper">
+	<![endif]-->
+		<nav class="top-bar"  data-options="is_hover:true" >
+			<ul class="title-area">
+				<li class="name"></li>
+			</ul>
+
+			<section class="top-bar-section">
+				<ul class="left">
+					<li id="navLogo">
+						<a href="http://www.arduino.cc/">
+							<img src="../../img/logo_46.png" alt="userpicture" />
+						</a>
+					</li>
+					<li id="navHome"><a href="http://www.arduino.cc/">홈</a></li>
+					<li><a href="http://store.arduino.cc/">구입</a></li>
+					<li><a href="http://www.arduino.cc/en/Main/Software">다운로드</a></li>
+					<li class="has-dropdown"><a href="#">제품</a>
+						<ul class="dropdown">
+							<li><a href="http://www.arduino.cc/en/Main/Products">아두이노 <span class="menudescription">(미국만 해당)</span></a></li>
+							<li><a href="http://www.arduino.cc/en/Main/GenuinoProducts">제누이노 <span class="menudescription">(미국 외)</span></a></li>
+							<li><a href="http://www.arduino.cc/en/ArduinoAtHeart/Products">AtHeart</a></li>
+							<li><a href="http://www.arduino.cc/en/ArduinoCertified/Products">인증 제품</a></li>
+						</ul>
+					</li>
+					<li class="has-dropdown active"><a href="#">배우기</a>
+						<ul class="dropdown">
+							<li><a href="http://www.arduino.cc/en/Guide/HomePage">시작 하기</a></li>
+							<li><a href="http://www.arduino.cc/en/Tutorial/HomePage">자습서</a></li>
+							<li><a href="HomePage.html">참조</a></li>
+							<li><a href="http://www.arduino.cc/en/Main/CTCprogram">CTC 프로그램</a></li>
+							<li><a href="http://playground.arduino.cc/">놀이터</a></li>
+						</ul>
+					</li>
+					<li><a href="http://forum.arduino.cc/">포럼</a></li>
+					<li class="has-dropdown"><a href="#">지원</a>
+						<ul class="dropdown">
+							<li><a href="http://www.arduino.cc/en/Main/FAQ">자주 묻는 질문들</a></li>
+							<li><a href="http://www.arduino.cc/en/ContactUs">연락처</a></li>
+						</ul>
+					</li>
+					<li><a href="http://blog.arduino.cc/">블로그</a></li>
+				</ul>
+
+								<ul class="right">
+					<li><a href="https://id.arduino.cc/auth/login/?returnurl=http%3A%2F%2Fwww.arduino.cc%2Fen%2FReference%2FSemiColon" class="cart">로그인</a></li>
+					<li><a href="https://id.arduino.cc/auth/signup" class="cart">가입하기</a></li>
+				</ul>
+							</section>
+		</nav>
+	</div>
+</div>
+
+
+
+		<br class="clear"/>
+
+		<div id="pagetext">
+				<!--PageText-->
+<div id='wikitext'>
+<p><strong>참조</strong> &nbsp;  <a class='wikilink' href='HomePage.html'>언어</a> | <a class='wikilink' href='Libraries.html'>라이브러리</a> | <a class='wikilink' href='Comparison.html'>비교</a> | <a class='wikilink' href='Changes.html'>변경 사항들</a>
+</p>
+<p class='vspace'></p><h2>TFT LCD 라이브러리</h2>
+<p class='vspace'></p><table  width='100%' border='0' cellpadding='5' cellspacing='0'><tr><td  width='67%' valign='top'>
+<p>TFT 라이브러리는 <a class='wikilink' href='http://www.arduino.cc/en/Main/Software'>아두이노 IDE</a> 버전 1.0.5 부터 같이 제공됩니다.
+</p>
+<p class='vspace'></p><p>이 라이브러리는 아두이노 보드와 아두이노 <a class='wikilink' href='http://www.arduino.cc/en/Main/GTFT'>TFT LCD 화면(스크린, screen)</a>이 통신할 수 있게 하며, 화면에 도형, 선, 이미지와 텍스트를 그리는 프로세스를 간단하게 합니다.
+</p>
+<p class='vspace'></p><p>아두이노 TFT 라이브러리는 <a class='urllink' href='https://github.com/adafruit/Adafruit-GFX-Library' rel='nofollow'>Adafruit GFX</a>, 그리고 Adafruit GFX를 기반으로 하는 <a class='urllink' href='https://github.com/adafruit/Adafruit-ST7735-Library' rel='nofollow'>Adafruit ST7735 라이브러리</a>를 확장한 것입니다. GFX 라이브러리는 그리기 루틴들을 담당하는 반면에 <span class='wikiword'>ST7735</span> 라이브러리는 아두이노 TFT 화면 전용입니다. 아두이노를 위한 추가 API들은 가능한 한 프로세싱(Processing) API들과 유사하게 사용하도록 설계되었습니다.
+</p>
+<p class='vspace'></p><p>TFT 보드 밑에 SD 카드 슬롯이 있으며 <a class='wikilink' href='SD.html'>SD 라이브러리</a>로 사용할 수 있습니다.
+</p>
+<p class='vspace'></p><p>TFT 라이브러리는 화면과 SD 카드와 통신을 위하여 <a class='wikilink' href='SPI.html'>SPI 라이브러리</a>를 사용하며 모든 스케치에 포함되어야 합니다
+</p>
+<p class='vspace'></p><h3>라이브러리 사용</h3>
+<p>화면은 두 가지 사용 방법으로 구성할 수 있습니다. 하나는 아두이노의 하드웨어 SPI 접속(인터페이스, interface)을 사용하는 것이며 다른 하나는 모든 핀들을 수동으로 선언하는 것입니다. 두 방법에 있어 기능상의 차이점은 없지만, 하드웨어 SPI를 사용하는 것이 훨씬 빠릅니다.
+</p>
+<p class='vspace'></p><p>TFT 모듈의 SD 카드를 사용하려면, 하드웨어 SPI를 사용하여야만 합니다. 라이브러리의 모든 예제들은 하드웨어 SPI를 사용하는 것으로 작성되었습니다.
+</p>
+<p class='vspace'></p><p>우노 보드에서 하드웨어 SPI를 사용하는 경우, MOSI(핀 11)과 SCLK(핀 13)는 이미 정의되어 있기 때문에 CS, DC 그리고 RESET 핀만 선언하면 됩니다.
+
+<div class='sourceblock ' id='sourceblock1'>
+  <div class='sourceblocktext'><div class="arduino"><span class="co2">#define CS &nbsp; 10</span><br />
+<span class="co2">#define DC &nbsp; 9</span><br />
+<span class="co2">#define RESET &nbsp;8 </span><br />
+<br />
+TFT myScreen <span class="sy0">=</span> TFT<span class="br0">&#40;</span>CS<span class="sy0">,</span> DC<span class="sy0">,</span> RESET<span class="br0">&#41;</span><span class="sy0">;</span></div></div>
+  <div class='sourceblocklink'><a href='http://www.arduino.cc/en/Reference/TFTLibrary?action=sourceblock&amp;num=1' type='text/plain'>[코드 얻기]</a></div>
+</div>
+
+</p>
+<p class='vspace'></p><p>레오나르도 보드에서 하드웨어 SPI를 사용하는 경우, 다음과 같이 핀들을 선언하세요:
+
+<div class='sourceblock ' id='sourceblock2'>
+  <div class='sourceblocktext'><div class="arduino"><span class="co2">#define CS &nbsp; 7</span><br />
+<span class="co2">#define DC &nbsp; 0</span><br />
+<span class="co2">#define RESET &nbsp;1</span><br />
+<br />
+TFT myScreen <span class="sy0">=</span> TFT<span class="br0">&#40;</span>CS<span class="sy0">,</span> DC<span class="sy0">,</span> RESET<span class="br0">&#41;</span><span class="sy0">;</span></div></div>
+  <div class='sourceblocklink'><a href='http://www.arduino.cc/en/Reference/TFTLibrary?action=sourceblock&amp;num=2' type='text/plain'>[코드 얻기]</a></div>
+</div>
+
+</p>
+<p class='vspace'></p><p>하두웨어 SPI를 사용하지 않을 경우, 사용 않는 핀들을 사용할 수 있지만, CD, DC, RESET과 더불어 MOSI와 SCLK 핀을 선언해야 합니다.
+</p>
+<p class='vspace'></p><p>
+<div class='sourceblock ' id='sourceblock3'>
+  <div class='sourceblocktext'><div class="arduino"><span class="co2">#define SCLK 4</span><br />
+<span class="co2">#define MOSI 5</span><br />
+<span class="co2">#define CS &nbsp; 6</span><br />
+<span class="co2">#define DC &nbsp; 7</span><br />
+<span class="co2">#define RESET 8 </span><br />
+<br />
+TFT myScreen <span class="sy0">=</span> TFT<span class="br0">&#40;</span>CS<span class="sy0">,</span> DC<span class="sy0">,</span> MOSI<span class="sy0">,</span> SCLK<span class="sy0">,</span> RESET<span class="br0">&#41;</span><span class="sy0">;</span></div></div>
+  <div class='sourceblocklink'><a href='http://www.arduino.cc/en/Reference/TFTLibrary?action=sourceblock&amp;num=3' type='text/plain'>[코드 얻기]</a></div>
+</div>
+ 
+</p>
+<p class='vspace'></p><h3>아두이노 Esplora와 TFT 라이브러리 사용하기</h3>
+    <p>아두이노 Esplora는 TFT 용으로 설계된 소켓을 가지고 있고, 화면을 위하여 사용하는 핀들이 정해져 있기 때문에 Esplora 보드를 위한 스케치를 작성할 때 Esplora 전용 객체가 만들어집니다. Esplora 보드에 장착된 화면은 <a class='wikilink' href='TFTEsplora.html'>EsploraTFT</a>를 통하여 제어할 수 있습니다.
+</p>
+<p class='vspace'></p><h3>프로세싱과 비슷한 점들</h3>
+<p><a class='urllink' href='http://processing.org/' rel='nofollow'>프로세싱(Processing)</a>은 디자이너, 아티스트 그리고 학생들이 사용하는 오픈 소스 소프트웨어 환경입니다. 프로세싱의 출력은 주로 컴퓨터 혹은 브라우저의 그래픽 창입니다. 아두이노 TFT 라이브러리는 두 환경 간의 원활한 전환을 위하여 "프로세싱과 같은" 화면에 그리기 기본들과 텍스트를 위한 호출들을 제공합니다.
+</p>
+<p class='vspace'></p><h3>예제들</h3>
+<p>TFT에 두가지 그룹의 예들이 있습니다. 아두이노 Esplora 보드 전용 예들과 우노 혹은 레오나르도와 같은 보드들을 위하여 설계된 예들이 있습니다. 일단 라이브러리와 라이브러리의 기능들을 다룰 수 있게 되면, 다른 것으로 바꾸는 것은 쉽습니다.
+<br />
+
+<div class="textsummary">
+              <div class="subtitle">아두이노</div>
+            </div>
+            <ul class="secondary-list follower-list">
+              <li><a href="https://www.arduino.cc/en/Tutorial/TFTBitmapLogo">TFT 비트맵 로고</a>: 마이크로 SD 카드에서 이미지 파일을 읽고 임의의 위치에 그립니다.</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/TFTColorPicker">TFT 색 선택기</a>: 세가지 센서로 TFT 화면 색을 변경합니다.</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/TFTDisplayText">TFT 텍스트 표시</a>: 센서 값을 읽고 이를 화면에 출렵합니다.</li>
+			  <li><a href="https://www.arduino.cc/en/Tutorial/TFTEtchASketch">TFT 스케치 하기</a>: 아두이노 버전의 고전 스케치 하기(Etch-a-Sketch).</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/TFTGraph">TFT 그래프</a>: 가변 저항 값을 TFT에 그래프로 그리기.</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/TFTPong">TFT 탁구</a>: 아두이노로 고전 게임 만들기.</li>
+            </ul>
+            <div class="textsummary">
+              <div class="subtitle">ESPLORA</div>
+            </div>
+            <ul class="secondary-list">
+              <li><a href="https://www.arduino.cc/en/Tutorial/EsploraTFTBitmapLogo">Esplora TFT 비트맵 로고</a>: 카트 레이싱 게임을 즐기기 위하여 Esplora를 컨트롤러로 사용하기.</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/EsploraTFTColorPicker">Esplora TFT 색 선택기</a>: 조이스틱과 슬라이더를 이용하여 TFT 화면색을 변경합니다.</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/EsploraTFTEtchASketch">Esplora TFT 스케치 하기</a>: Esplora 버전의 고전 스케치 하기(Etch-a-Sketch).</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/EsploraTFTGraph">Esplora TFT 그래프</a>: TFT에 조도 센서의 값을 그래프로 그리기.</li>
+			  <li><a href="https://www.arduino.cc/en/Tutorial/EsploraTFTHorizon">Esplora TFT 지평선</a>: 가속도계의 기울기에 따라 인공 지평선을 그리기.</li>
+              <li><a href="https://www.arduino.cc/en/Tutorial/EsploraTFTPong">Esplora TFT 탁구</a>: 고전 게임의 기본 구현.</li>
+			  <li><a href="https://www.arduino.cc/en/Tutorial/EsploraTFTTemp">Esplora TFT 온도</a>: 보드에 장착된 센서로 온도를 측정하여 화면에 나타내기.</li>
+            </ul>
+          </div>
+
+</p>
+<p class='vspace'></p><p>TFT 화면에 대한 추가적인 정보는 <a class='wikilink' href='http://www.arduino.cc/en/Guide/TFT'>아두이노 TFT 시작하기 페이지</a> 와 <a class='wikilink' href='http://www.arduino.cc/en/Main/GTFT'>하드웨어 페이지</a>를 참조하세요.
+<br /><br /><br />
+</p></td><td  width='33%' valign='top'>
+<p class='vspace'></p><h4>TFT</h4>
+<ul><li><a class='wikilink' href='TFTConstructor.html'>TFT</a> 
+</li><li><a class='wikilink' href='TFTEsplora.html'>EsploraTFT</a> 
+<p class='vspace'></p></li><li><a class='wikilink' href='TFTBegin.html'>begin</a>()
+</li><li><a class='wikilink' href='TFTBackground.html'>background()</a>
+</li><li><a class='wikilink' href='TFTStroke.html'>stroke</a>()
+</li><li><a class='wikilink' href='TFTNoStroke.html'>noStroke</a>()
+</li><li><a class='wikilink' href='TFTFill.html'>fill()</a>
+</li><li><a class='wikilink' href='TFTNoFill.html'>noFill</a>()
+</li><li><a class='wikilink' href='TFTText.html'>text</a>()
+</li><li><a class='wikilink' href='TFTSetTextSize.html'>setTextSize()</a>
+</li><li><a class='wikilink' href='TFTBegin.html'>begin</a>()
+</li><li><a class='wikilink' href='TFTPoint.html'>point()</a>
+</li><li><a class='wikilink' href='TFTLine.html'>line</a>()
+</li><li><a class='wikilink' href='TFTRect.html'>rect()</a>
+</li><li><a class='wikilink' href='TFTWidth.html'>width</a>()
+</li><li><a class='wikilink' href='TFTHeight.html'>height()</a>
+</li><li><a class='wikilink' href='TFTCircle.html'>circle</a>()
+</li><li><a class='wikilink' href='TFTImage.html'>image</a>()
+</li><li><a class='wikilink' href='TFTLoadImage.html'>loadImage</a>()
+<p class='vspace'></p></li><li><a class='wikilink' href='TFTPImage.html'>PImage</a>
+</li><li><a class='wikilink' href='TFTPImageHeight.html'>PImage.height</a>()
+</li><li><a class='wikilink' href='TFTPImageWidth.html'>PImage.width</a>()
+</li><li><a class='wikilink' href='TFTPImageIsValid.html'>PImage.isValid</a>()
+</li></ul><p class='vspace'></p></td></tr></table>
+<p><a class='wikilink' href='HomePage.html'>참조 홈 페이지</a>
+</p>
+<p class='vspace'></p><p><em>수정, 제안, 새로운 문서는 <a class='urllink' href='http://arduino.cc/forum/index.php/board,23.0.html' rel='nofollow'>포럼</a>에 올려 주세요.</em>
+</p>
+<p class='vspace'></p><p>아두이노 참조의 텍스트는
+<a class='urllink' href='http://creativecommons.org/licenses/by-sa/3.0/' rel='nofollow'>크리에이티브 커먼즈 저작자표시-동일조건변경허락 3.0 라이선스</a>하에 허가된 것입니다.  참고의 코드 샘플은 공개 도메인으로 배포되었습니다.
+</p>
+</div>
+
+
+				<!-- AddThis Button Style BEGIN -->
+<style>
+  .addthis_toolbox {
+    margin: 2em 0 1em;
+  }
+  .addthis_toolbox img {
+    float: left;
+    height: 25px;
+    margin-right: 10px;
+    width: auto;
+  }
+  .addthis_toolbox .social-container {
+    float: left;
+    height: 27px;
+    width: auto;
+  }
+  .addthis_toolbox .social-container .social-content {
+    float: left;
+    margin-top: 2px;
+    max-width: 0;
+    overflow: hidden;
+    -moz-transition: max-width .3s ease-out;
+    -webkit-transition: max-width .3s ease-out;
+    -o-transition: max-width .3s ease-out;
+    transition: max-width .3s ease-out;
+  }
+  .addthis_toolbox .social-container:hover .social-content {
+    max-width: 100px;
+    -moz-transition: max-width .2s ease-in;
+    -webkit-transition: max-width .2s ease-in;
+    -o-transition: max-width .2s ease-in;
+    transition: max-width .2s ease-in;
+  }
+  .addthis_toolbox .social-container .social-content a {
+    float: left;
+    margin-right: 5px;
+  }
+
+  .addthis_toolbox h3 {
+    font-size: 24px;
+    text-align: left;
+  }
+</style>
+<!-- AddThis Button Style END -->
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style">
+  <h3>공유 하기</h3>
+  <!-- FACEBOOK -->
+  <div class="social-container">
+    <img src="../pub/skins/arduinoWide_SSO/img/facebook.png" />
+    <div class="social-content">
+      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+    </div>
+  </div>
+  <!-- TWITTER -->
+  <div class="social-container">
+    <img src="../pub/skins/arduinoWide_SSO/img/twitter.png">
+    <div class="social-content">
+      <a class="addthis_button_tweet"></a>
+    </div>
+  </div>
+  <!-- PINTEREST -->
+  <div class="social-container">
+    <img src="../pub/skins/arduinoWide_SSO/img/pinterest.png">
+    <div class="social-content">
+      <a class="addthis_button_pinterest_pinit" pi:pinit:url="//www.addthis.com/features/pinterest" pi:pinit:media="//www.addthis.com/cms-content/images/features/pinterest-lg.png"></a>
+    </div>
+  </div>
+  <!-- G+ -->
+  <div class="social-container">
+    <img src="../pub/skins/arduinoWide_SSO/img/gplus.png">
+    <div class="social-content">
+      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+    </div>
+  </div>
+
+  <script type="text/javascript">var addthis_config = {"data_track_addressbar":false};</script>
+  <script type="text/javascript" src="http://s7.addthis.com/js/300/addthis_widget.js#pubid=ra-50573fab238b0d34"></script>
+</div>
+<!-- AddThis Button END -->
+
+		</div> <!-- eof pagetext -->
+
+	</div> <!-- eof page -->
+
+	<!--PageFooterFmt-->
+	<div id="pagefooter">
+		<div id="newsletterModal" class="reveal-modal small">
+  <form action="http://www.arduino.cc/subscribe.php" method="post" name="sendy-subscribe-form" id="sendy-subscribe-form" class="form-popup">
+    <div class="modalHeader">
+      <h3 style="line-height: 1.8rem;" class="modal-header-alt">이 링크는 만료되었습니다. <br>뉴스레터에 다시 가입하여 주세요.</h3>
+      <h3 class="modal-header-main">뉴스레터에 가입하여 주세요.</h3>
+    </div>
+    <div class="modalBody" id="newsletterModalBody">
+        <div id="newsletterEmailField" class="row" style="padding-left: 0">
+          <div class="large-2 columns">
+            <label for="email" class="newsletter-form-label inline">Email</label>
+          </div>
+          <div class="large-10 columns" style="padding-left: 0">
+            <input placeholder="Email 주소를 넣어 주세요" type="email" name="email" class="subscribe-form-input" />
+            <p id="emailMissing" class="newsletterPopupError">가입을 위하여 유효한 email 주소를 넣어 주세요</p>
+          </div>
+        </div>
+        <div style="margin-left:20px">
+          <div style="margin-bottom:0.3em">
+            <input style="display:none" type="checkbox" checked name="list[]" value="arduino_newsletter_id" id="worldwide" class="newsletter-form-checkbox" />
+            <label for="worldwide"></label>
+            <div style="display:inline-block" class="newsletter-form-label">아두이노 뉴스레터</div>
+          </div>
+          <div>
+            <input style="display:none" type="checkbox" checked name="list[]" value="arduino_store_newsletter_id" id="store" class="newsletter-form-checkbox" />
+            <label for="store"></label>
+            <div style="display:inline-block" class="newsletter-form-label">아두이노 매장 뉴스레터</div>
+          </div>
+        </div>
+        <div>
+          <p class="newsletterPopupError2" id="newsletterSubscribeStatus"></p>
+        </div>
+    </div>
+    <div class="row modalFooter">
+      <div class="form-buttons-row">
+
+          <button type="button" value="Cancel" class="popup-form-button white cancel-modal close-reveal-modal">취소</button>
+          <button type="submit" name="Subscribe" id="subscribe-submit-btn" class="popup-form-button">다음</button>
+
+      </div>
+    </div>
+  </form>
+
+  <!-- step 2, confirm popup -->
+  <div class="confirm-popup" style="margin-bottom:1em">
+    <div class="modalHeader">
+      <h3>Email 주소를 확인하여 주세요</h3>
+    </div>
+    <div class="modalBody" id="newsletterModalBody" style="padding-right:1em;margin-bottom:0">
+        <p style="margin-bottom:1em;font-size:15px">
+          Email 주소의 확인이 필요합니다.<br>
+          가입 완료를 위하여, 저희가 보내드린 Email의 링크를 클릭하여 주세요.
+        </p>
+        <p style="margin-bottom:1em;font-size:15px">
+          가입에 감사드립니다!
+        </p>
+        <p style="margin-bottom:1em;font-size:15px">
+          Arduino<br>
+          via Egeo 16<br>
+          Torino, 10131<br>
+          Italy<br>
+        </p>
+    </div>
+    <div class="row modalFooter">
+      <div class="form-buttons-row">
+
+          <button name="Ok" class="popup-form-button" id="close-confirm-popup">Ok</button>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+<div id="pagefooter" class="pagefooter">
+  <div class="row">
+    <div class="large-8 eight columns">
+      <div class="large-4 four columns newsletter-box">
+        <!-- Begin Sendy Signup Form -->
+        <h6>뉴스레터</h6>
+        <div>
+          <input type="email" name="email" class="email" id="sendy-EMAIL" placeholder="가입을 위한 Email 주소를 넣어 주세요">
+          <i class="icon-right-small"></i>
+          <input value="Subscribe" name="subscribe" id="sendy-subscribe" class="newsletter-button">
+        </div>
+        <!--End sendy_embed_signup-->
+      </div>
+      <div class="clearfix"></div>
+      <ul class="inline-list">
+        <li class="monospace">&copy;2015 아두이노</li>
+        <li><a href="http://www.arduino.cc/en/Main/CopyrightNotice">저작권 안내</a></li>
+        <li><a href='http://www.arduino.cc/en/Main/ContactUs'>문의</a></li>
+        <li><a href='http://www.arduino.cc/en/Main/AboutUs'>회사 소개</a></li>
+        <li><a href='http://www.arduino.cc/Careers'>채용 정보</a></li>
+      </ul>
+    </div>
+    <div class="large-4 four columns">
+      <ul id="arduinoSocialLinks" class="arduino-social-links">
+        <li>
+          <a href="https://twitter.com/arduino">
+            <img src="../../img/twitter.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.facebook.com/official.arduino">
+            <img src="../../img/facebook.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://plus.google.com/+Arduino">
+            <img src="../../img/gplus.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.flickr.com/photos/arduino_cc">
+            <img src="../../img/flickr.png" />
+          </a>
+        </li>
+        <li>
+          <a href="https://youtube.com/arduinoteam">
+            <img src="../../img/youtube.png" />
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+	</div>
+	<!--/PageFooterFmt-->
+	
+	<!--[if gte IE 9]><!-->
+	<script src="http://arduino.cc/js/foundation.min.js"></script>
+	<script src="http://arduino.cc/js/foundation.topbar.custom.js"></script>
+	<script>
+	  $(document).foundation();
+	</script>
+	<!--<![endif]-->
+	<!--[if IE 8]>
+	<script src="//arduino.cc/js/foundation_ie8.min.js"></script>
+	<script src="//arduino.cc/js/ie8/jquery.foundation.orbit.js"></script>
+	<script src="//arduino.cc/js/ie8/jquery.foundation.alerts.js"></script>
+	<script src="//arduino.cc/js/app.js"></script>
+	
+	<script>
+	$(window).load(function(){
+	  $("#featured").orbit();
+	});
+	</script>
+	<![endif]-->
+	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-22581631-3']);
+	  _gaq.push(['_setDomainName', 'arduino.cc']);
+	  _gaq.push(['_trackPageview']);
+	
+	    (function() {
+	    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
+
+	<script>
+	  $(window).load(function(){
+	    $('a').each (function () {
+	      href = $(this).attr ('href');
+	      if (href !== undefined && href.substring (0, 4) == 'http' && href.indexOf ('https://www.arduino.cc/en/Reference/arduino.cc') == -1)
+	        $(this).attr ('target', '_blank');
+	    });
+
+	    // js for language dropdown
+	    $('.language-dropdown .current').on('click', function(e){
+          e.stopPropagation();
+          $('.language-dropdown ul').toggle();
+        });
+
+        $('.language-dropdown .selector').on('click', function(e){
+          e.stopPropagation();
+          $('.language-dropdown ul').toggle();
+        });
+
+        $(document).on('click', function(){
+          $('.language-dropdown ul:visible').hide();  
+        });
+
+        $('.language-dropdown li a').on('click', function(e){
+        	$('.language-dropdown .current').text($(this).text());
+        });
+
+        //js for product pages navbar
+        var menu = $(".product-page-nav");
+	    var menuItems = menu.find("a");
+	    var timeoutId = null;
+	    var limitTop = 600;
+
+	    var menuOffset = $('.product-page-nav li').first().offset();
+	    if(menuOffset) {
+	    	limitTop = menuOffset.top;
+	    }
+	    var limitBottom = $('.addthis_toolbox').offset().top;
+
+	    var activateSection = function($sectionToActivate) {
+	      var label=$sectionToActivate.attr('label');
+
+	      $(".product-page-nav").find('li').removeClass('active');
+	      $sectionToActivate.addClass('active');
+	    };
+
+	    menuItems.click(function(e){
+
+	     e.preventDefault();
+	      var href = $(this).attr("href"),
+	          offsetTop = href === "#" ? 0 : $(href).offset().top,
+	          adjust = 0;
+	      if($(this).parent('li').hasClass('active') === false) {
+
+	          adjust = 80;
+
+	          $('html, body').animate({
+	                scrollTop: offsetTop - adjust
+	            }, 1500, 'easeOutExpo');
+
+	      }
+	    });
+
+	    $(window).scroll(function () {
+
+	      var windscroll = $(window).scrollTop();
+
+	      if(windscroll < limitTop) {
+	        $('.menu').removeClass('sticky');
+	        $('.menu').removeClass('fixed');
+	      }  else {
+	        $('.menu').addClass('sticky');
+	      }
+
+	      var menuEdgeBottomOffset = $('.menu.columns').offset();
+	      var menuEdgeBottom = 0;
+	      if(menuEdgeBottomOffset) {
+	      	menuEdgeBottom = menuEdgeBottomOffset.top + $('.menu.columns').height();
+	      }
+	      if(menuEdgeBottom > limitBottom) {
+	        $('.menu').fadeOut();
+	      } else {
+	        $('.menu').fadeIn();
+	      }
+	      menuItems.each(function(i) {
+	        var href = $(this).attr("href");
+	        if ($(href).offset().top <= windscroll + 150) {
+	          if(timeoutId) {
+	            clearTimeout(timeoutId);
+	          }
+	          timeoutId = setTimeout(activateSection, 60, $(".product-page-nav").find('li').eq(i));
+	        }
+	      });
+
+	    });
+
+	  });
+	</script>
+</body>
+
+<!-- Mirrored from www.arduino.cc/en/Reference/TFTLibrary by HTTrack Website Copier/3.x [XR&CO'2010], Mon, 26 Oct 2015 14:03:58 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+</html>
